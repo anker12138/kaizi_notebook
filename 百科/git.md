@@ -150,6 +150,19 @@ git branch -vv
 
 ### 七、撤销与回滚（谨慎使用）
 ```bash
+#撤销暂存区的修改 对应的提交回到工作区
+# 撤销多个文件的暂存
+git restore --staged src/main.py tests/test.py
+# 撤销所有文件的暂存
+git restore --staged .
+
+#放弃工作区的修改
+# 放弃多个文件的工作区修改
+git restore src/main.py tests/test.py
+# 放弃当前目录及子目录所有文件的工作区修改
+git restore .
+
+
 # 回滚到指定提交（保留修改，回到暂存区）
 git reset --soft 提交ID
 
